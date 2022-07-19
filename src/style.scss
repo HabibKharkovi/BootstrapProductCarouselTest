@@ -1,0 +1,181 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+@font-face {
+    font-family: 'Sofia Pro Bold';
+    src: url('../dist/fonts/SofiaPro-Bold.woff2') format('woff2'),
+        url('../dist/fonts/SofiaPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sofia Pro Regular';
+    src: url('../dist/fonts/SofiaPro-Regular.woff2') format('woff2'),
+        url('../dist/fonts/SofiaPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+$cerise-red: #D62E55;
+$french-rose: #F4436C;
+$lavender-blush: #FFF2F4;
+$sofia-regular: 'Sofia Pro Regular';
+$sofia-bold: 'Sofia Pro Bold';
+
+.products-section {
+    .container {
+        max-width: 1515px;
+        @media screen and (max-width: 767px) {
+            padding: 0;
+        }
+    }
+    .text-cerise-red {
+        color: $cerise-red;
+    }
+    .bg-cerise-red {
+        background-color: $cerise-red;
+    }
+    .text-sofia-regular {
+        font-family: $sofia-regular;
+    }
+    .text-sofia-bold {
+        font-family: $sofia-bold;
+    }
+    .fs-1 {
+        font-size: 14px
+    }
+    .fs-2 {
+        font-size: 16px
+    }
+    .fs-3 {
+        font-size: 20px;
+    }
+    .lh-1 {
+        line-height: 1;
+    }
+    .rounded-2 {
+        border-radius: 8px;
+    }
+    .carousel-item {
+        @media screen and (max-width: 767px) {
+            opacity: 0;
+            .col-lg-3 {
+                min-width: 255px;
+                padding: 0 7px;
+            }
+        }
+        &.active {
+            display: flex;
+            @media screen and (max-width: 767px) {
+                margin-left: -51vw;
+                opacity: 1;
+            }
+        }     
+    } 
+    .carousel-item-next {
+        display: flex;
+        transform: translateX(25%);
+        @media screen and (max-width: 767px) {
+            transform: translateX(70%);
+        }
+    }
+    .carousel-item-prev {
+        display: flex;
+        transform: translateX(-25%);
+        @media screen and (max-width: 767px) {
+            transform: translateX(-70%);
+        }
+    }
+    .carousel-item-right {
+        transform: translateX(0);
+        &.active {
+            transform: translateX(25%);
+            @media screen and (max-width: 767px) {
+                transform: translateX(70%);
+            }
+        }
+    }
+    .carousel-item-left {
+        transform: translateX(0);
+        &.active {
+            transform: translateX(-25%);
+            @media screen and (max-width: 767px) {
+                transform: translateX(-70%);
+            }
+        }
+    }
+    .text {
+        line-height: 1.2;
+        max-width: 275px;
+    }
+    .btn {
+        height: 50px;
+    }
+    .secondary-btn {
+        max-width: 182px;
+        border: 2px solid $french-rose;
+    }
+    .tag {
+        width: 86px;
+        height: 86px;
+        top: -16px;
+        right: -16px;
+        @media screen and (max-width: 767px) {
+            height: 65px;
+            right: -7px;
+            top: -21px;
+            width: 65px;
+            font-size: 16px;
+        }
+    }
+    .carousel-control-next, .carousel-control-prev {
+        width: 40px;
+        height: 40px;
+        top: 28%;
+        background-color: $lavender-blush;
+        opacity: 1;
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+    .carousel-control-prev {
+        left: 12%;
+        @media screen and (max-width: 767px) {
+            left: 9%;
+        }
+    }
+    .carousel-control-next {
+        right: 12%;
+        @media screen and (max-width: 767px) {
+            right: 9%;
+        }
+    }
+    .product-image-wrapper {
+        min-height: 270px;
+        background-color: $lavender-blush;
+    }
+    .carousel-inner {
+        position: relative;
+        @media screen and (min-width: 767px) {
+            &:after, &:before {
+                content: '';
+                position: absolute;
+                background-color: #fff;
+                height: 100%;
+                width: 13%;
+                top: 0;
+                z-index: 1;
+            }
+            &:after {
+                right: 0;
+            }
+            &:before {
+                left: 0;
+            }
+        }
+    }
+}
+
